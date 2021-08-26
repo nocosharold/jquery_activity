@@ -8,48 +8,78 @@
 		<link rel="stylesheet" href="./assets/css/style.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="./assets/js/index.js"></script>
-		<title>Hampas PANG GAS</title>
+		<title>HAMPAS PANG GAS</title>
 	</head>
 	<body>
-		<div class="container">
-            <div class="nav">
-                <a href="./index.html">
-                    <h3>HAMPAS<span>PANG GAS</span></h3>
-                </a>
-            </div>
+        <nav>
+            <a href="./index.html">
+                <h3>HAMPAS<span>PANG GAS</span></h3>
+            </a>
+        </nav>
+
+        <div class="container">
             <div class="content_container" id="recruit_screen">
-                <div class="characters_container">
-                    <div class="character">
-                        <div class="character_image">
-                            <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Goodwin_Walsh_nA0CkzBol.png?updatedAt=1629869913685">
-                            <h3>Goodwin Walsh</h3>
-                        </div>
-                    </div>
-                    
-                    <div class="character">
-                        <div class="character_image">
-                            <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Goodwin_Walsh_nA0CkzBol.png?updatedAt=1629869913685">
-                            <h3>Goodwin Walsh</h3>
-                        </div>
-                    </div>
-                    
-                    <div class="character">
-                        <div class="character_image">
-                            <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Goodwin_Walsh_nA0CkzBol.png?updatedAt=1629869913685">
-                            <h3>Goodwin Walsh</h3>
-                        </div>
-                    </div>
+                <div class="character">
+                    <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Goodwin_Walsh_nA0CkzBol.png?updatedAt=1629869913685">
+                    <h3>Goodwin Walsh</h3>
+                    <button type="button">RECRUIT</button>
                 </div>
 
-                <div class="details_container">
-                    <h2>RECRUIT <span>A HERO</span></h2>
+                <div class="character">
+                    <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Wilfrid_Poole_Yd_lWzL2e.png?updatedAt=1629869918201">
+                    <h3>Wilfrid Poole</h3>
+                    <button type="button">RECRUIT</button>
                 </div>
+
+                <div class="character">
+                    <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Matt_Swanson_r7xuJWwLi.png?updatedAt=1629869915567">
+                    <h3>Matt Swanson</h3>
+                    <button type="button">RECRUIT</button>
+                </div>
+
+                <h2>RECRUIT <span>A HERO</span></h2>
+
             </div>
 
             <div class="content_container" id="fight_screen">
+                <div class="character active">
+                    <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Goodwin_Walsh_nA0CkzBol.png?updatedAt=1629869913685">
+                    <h3>Goodwin Walsh</h3>
+                </div>
 
-            </div>
-			
+                <div class="villains">
+                    <div class="character">
+                        <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Edie_Miles_TWZagGIek.png?updatedAt=1629869912133">
+                        <h3>Edie Miles</h3>
+                        <button type="button" class="fight">FIGHT!</button>
+                    </div>
+
+                    <div class="character">
+                        <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Edmond_Buckley_uaBQ_GRNe.png?updatedAt=1629869912713">
+                        <h3>Edmond Buckley</h3>
+                        <button type="button" class="fight">FIGHT!</button>
+                    </div>
+
+                    <div class="character">
+                        <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Spike_Fennimore_vz9s5Q8WZ.png?updatedAt=1629869917356">
+                        <h3>Spike Fennimore</h3>
+                        <button type="button" class="fight">FIGHT!</button>
+                    </div>
+
+                    <div class="character">
+                        <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/John_Romero_fxc7HyyVf.png?updatedAt=1629869914588">
+                        <h3>John Romero</h3>
+                        <button type="button" class="fight">FIGHT!</button>
+                    </div>
+                </div>
+            </div> 
 		</div>
+
+        <div class="modal_wrap">
+            <div class="modal_content">
+                <h2>WAITING FOR FIGHTING RESULTS...</h2>
+                <button type="button" id="close_modal_button">CLOSE</button>
+            </div>
+        </div>
 	</body>
 </html>

@@ -17,9 +17,9 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 .homepage_container {
-  text-align: center;
-  margin-top: 16%;
   color: #eeeeee;
+  margin-top: 16%;
+  text-align: center;
 }
 .homepage_container h1,
 .homepage_container h3 {
@@ -30,90 +30,166 @@ body {
   letter-spacing: 3px;
 }
 .homepage_container h3 {
-  font-weight: 400;
   font-size: 52px;
+  font-weight: 400;
   margin-bottom: 32px;
 }
 .homepage_container a {
-  color: #eeeeee;
-  text-decoration: none;
   background: #ff851b;
+  border-radius: 4px;
+  color: #eeeeee;
+  font-size: 24px;
+  font-weight: 700;
   margin-top: 20px;
   padding: 10px 56px;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 24px;
+  text-decoration: none;
   transition: all 0.2s ease;
 }
 .homepage_container a:hover {
-  background: #ff851b;
+  background: #f87300;
   box-shadow: 0px 0px 16px 0px rgba(255, 133, 27, 0.4);
   -webkit-box-shadow: 0px 0px 16px 0px rgba(255, 133, 27, 0.4);
   -moz-box-shadow: 0px 0px 16px 0px rgba(255, 133, 27, 0.4);
 }
-.nav {
+nav {
+  background: #373a40;
+  padding-left: 20px;
   position: fixed;
   top: 0;
   width: 100%;
-  padding-left: 20px;
-  background: #373a40;
   z-index: 1;
   box-shadow: 0px 0px 16px 0px rgba(255, 133, 27, 0.4);
   -webkit-box-shadow: 0px 0px 16px 0px rgba(255, 133, 27, 0.4);
   -moz-box-shadow: 0px 0px 16px 0px rgba(255, 133, 27, 0.4);
 }
-.nav a {
+nav a {
   text-decoration: none;
 }
-.nav h3 {
+nav h3 {
   color: #eeeeee;
-  margin: 20px;
   cursor: pointer;
+  margin: 20px;
   transition: all 0.2s ease;
 }
-.nav h3:hover {
+nav h3:hover {
   color: #ff851b;
 }
-.nav span {
+nav span {
+  display: block;
   font-size: 16px;
   font-weight: 400;
-  display: block;
   letter-spacing: 0.2px;
 }
+.container {
+  margin: 110px auto;
+  width: 1140px;
+}
 .content_container {
+  align-items: flex-start;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  position: relative;
 }
-.content_container .characters_container {
-  padding: 120px 0 0 40px;
-  width: 18%;
+.content_container#fight_screen {
+  display: none;
 }
-.content_container .characters_container .character {
+.content_container .character {
   background: #eee;
-  border: 2px solid #ccc;
   border-radius: 8px;
-  margin: 0 10px 10px -4px;
-  width: 250px;
+  border: 2px solid #ccc;
+  margin: 0 10px 10px -2px;
   text-align: center;
   transition: all 0.2s ease;
+  width: 250px;
 }
-.content_container .characters_container .character .character_image img {
+.content_container .character img {
+  margin-bottom: 20px;
   transform: scale(1.2);
   width: 100%;
-  height: 100%;
+}
+.content_container .character button {
+  background-color: #ff851b;
+  border-radius: 4px;
+  border: 0;
+  color: #eeeeee;
+  cursor: pointer;
   margin-bottom: 20px;
+  padding: 10px 20px;
 }
-.content_container .details_container {
-  margin-top: 16%;
-  width: 80%;
-  text-align: center;
+.content_container .character button:hover {
+  background-color: #f87300;
 }
-.content_container .details_container h2 {
+.content_container .character.active {
+  display: inline-block;
+  margin-top: 18%;
+}
+.content_container h2 {
   color: #eeeeee;
   font-size: 88px;
+  position: absolute;
+  right: 200px;
+  top: 150px;
 }
-.content_container .details_container h2 span {
+.content_container h2 span {
   display: block;
   font-weight: 400;
   letter-spacing: 8px;
+}
+.content_container .content_container #recruit_screen {
+  margin-top: 210px;
+}
+#fight_screen .villains {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 0 auto;
+  position: absolute;
+  right: 200px;
+  top: 0;
+  width: 600px;
+}
+#fight_screen .villains .character {
+  padding: 0;
+}
+.modal_wrap {
+  display: block;
+  display: none;
+  align-items: center;
+  background: rgba(55, 58, 64, 0.8);
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+.modal_wrap .modal_content {
+  margin: 16% auto;
+  position: relative;
+  background: #fff;
+  width: 600px;
+  height: 300px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.modal_wrap #close_modal_button {
+  display: block;
+  display: none;
+  background-color: #ff851b;
+  border-radius: 4px;
+  border: 0;
+  color: #eeeeee;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+.modal_wrap #close_modal_button:hover {
+  background-color: #f87300;
+}
+.modal_wrap #close_modal_button.show {
+  display: block;
 }
