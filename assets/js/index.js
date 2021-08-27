@@ -1,34 +1,27 @@
-let recruite_hero = [
-    
-];
-
-
-
 $(document).ready(function(){
-    $("body").on("click", "button", function(){
+    $("body").on("click", ".recruit_hero_button", function(){
         $("#fight_screen").show();
         $("#recruit_screen").hide();
     });
 
-    $("body").on("click", ".fight", function(){
+    $("body").on("click", ".fight_button", function(){
         $(".modal_wrap").fadeIn().show();
-        let is_won = Math.floor(Math.random() * 2);
-        // let is_won = Math.random() < 0.5;
-        let result_array = [true,false];
-        console.log(is_won);
-        setTimeout(()=> {
-
-
-            $(".modal_content").find("h2").text(`You ${(result_array[is_won]) ? "WON" : "LOST"} the fight`);
-            $("#close_modal_button").addClass("show");
-
-        },3000);
+        generateMatchResult();
     });
 
     $("body").on("click", "#close_modal_button", function(){
         $(".modal_wrap").fadeOut().hide();
-        $(".modal_content").find("h2").text("Waiting for result" );
+        $(".modal_content").find("h2").text("WAITING FIGHT RESULT...");
         $("#close_modal_button").removeClass("show");
     });
 });
 
+function generateMatchResult() {
+    let is_won = Math.random() < 0.5;
+    
+    setTimeout(()=> {
+        $(".modal_content").find("h2").text(`YOU ${ (is_won) ? "WON" : "LOST" } THE FIGHT!`);
+        $("#close_modal_button").addClass("show");
+    }, 3000 );
+    console.log(is_won);
+}
