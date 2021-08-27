@@ -63,16 +63,17 @@ nav {
   -moz-box-shadow: 0px 0px 16px 0px rgba(255, 133, 27, 0.4);
 }
 nav a {
+  color: #eeeeee;
   text-decoration: none;
 }
+nav a:hover {
+  color: #ff851b;
+}
 nav h3 {
-  color: #eeeeee;
   cursor: pointer;
   margin: 20px;
   transition: all 0.2s ease;
-}
-nav h3:hover {
-  color: #ff851b;
+  width: 100px;
 }
 nav span {
   display: block;
@@ -84,16 +85,16 @@ nav span {
   margin: 110px auto;
   width: 1140px;
 }
-.content_container {
+.container .content_container {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.content_container#fight_screen {
+.container .content_container#fight_screen {
   display: none;
 }
-.content_container .character {
+.container .content_container .character {
   background: #eee;
   border-radius: 8px;
   border: 2px solid #ccc;
@@ -102,12 +103,11 @@ nav span {
   transition: all 0.2s ease;
   width: 250px;
 }
-.content_container .character img {
-  margin-bottom: 20px;
-  transform: scale(1.2);
+.container .content_container .character img {
+  margin-bottom: 10px;
   width: 100%;
 }
-.content_container .character button {
+.container .content_container .character button {
   background-color: #ff851b;
   border-radius: 4px;
   border: 0;
@@ -116,29 +116,26 @@ nav span {
   margin-bottom: 20px;
   padding: 10px 20px;
 }
-.content_container .character button:hover {
+.container .content_container .character button:hover {
   background-color: #f87300;
 }
-.content_container .character.selected {
+.container .content_container .character.selected {
   display: inline-block;
   margin-top: 18%;
 }
-.content_container h2 {
+.container .content_container h2 {
   color: #eeeeee;
   font-size: 88px;
   position: absolute;
   right: 200px;
   top: 150px;
 }
-.content_container h2 span {
+.container .content_container h2 span {
   display: block;
   font-weight: 400;
   letter-spacing: 8px;
 }
-.content_container .content_container #recruit_screen {
-  margin-top: 210px;
-}
-#fight_screen .villains {
+.container .villains {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -148,15 +145,15 @@ nav span {
   right: 200px;
   top: 0;
   width: 600px;
+  list-style: none;
 }
-#fight_screen .villains .character {
+.container .villains .character {
   padding: 0;
 }
 .modal_wrap {
-  display: block;
-  display: none;
   align-items: center;
   background: rgba(55, 58, 64, 0.8);
+  display: none;
   height: 100%;
   justify-content: center;
   position: fixed;
@@ -165,25 +162,24 @@ nav span {
   z-index: 99;
 }
 .modal_wrap .modal_content {
-  margin: 16% auto;
-  position: relative;
+  align-items: center;
   background: #fff;
-  width: 600px;
-  height: 300px;
   border-radius: 8px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  margin: 16% auto;
+  position: relative;
+  width: 680px;
 }
 .modal_wrap #close_modal_button {
-  display: block;
-  display: none;
   background-color: #ff851b;
   border-radius: 4px;
   border: 0;
   color: #eeeeee;
   cursor: pointer;
+  display: none;
   margin-bottom: 20px;
   padding: 10px 20px;
 }
