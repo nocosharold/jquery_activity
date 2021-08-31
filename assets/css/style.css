@@ -120,6 +120,9 @@ nav span {
 .container .content_container .character button:hover {
   background-color: #f87300;
 }
+.container .content_container .character #game_energy {
+  color: #ff851b;
+}
 .container .content_container #selected_hero {
   display: inline-block;
   margin-top: 18%;
@@ -141,12 +144,12 @@ nav span {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
+  list-style: none;
   margin: 0 auto;
   position: absolute;
   right: 200px;
   top: 0;
   width: 600px;
-  list-style: none;
 }
 .container .villains .character {
   padding: 0;
@@ -180,7 +183,6 @@ nav span {
   border: 0;
   color: #eeeeee;
   cursor: pointer;
-  display: none;
   margin-bottom: 20px;
   padding: 10px 20px;
 }

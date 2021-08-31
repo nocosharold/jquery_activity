@@ -4,21 +4,21 @@ $(document).ready(function(){
     loadHeroCharacters();
     loadVillainCharacters();
 
-    $("#match_result").hide();
     $("body")
         .on("click", ".recruit_hero_button", switchScreen)
         .on("click", ".fight_button", generateMatchResult)
-        .on("click", "#close_modal_button", closeModal);
+        .on("click", "#close_modal_button", closeModalButton);
 });
+
+let energy = 20;
 
 /**
 *   DOCU: This function is used to close modal
 *   Last updated at: August 31, 2021
 *   @author Harold
 */
-function closeModal(){
-    $(".modal_wrap").fadeOut().hide();
-    $(".modal_content h2").text("WAITING FIGHT RESULT...");
+function closeModalButton(){
+    $(this).parent().parent().hide();
 }
 
 /**
@@ -68,7 +68,7 @@ function loadVillainCharacters(){
 /**
 *   DOCU: This function is used to recruit a hero then switch to fight screen
 * 	Triggered by .on("click", ".recruit_hero_button", switchScreen)
-*   Last updated at: August 27, 2021
+*   Last updated at: August 31, 2021
 *   @author Harold
 */
 function switchScreen(){
@@ -88,25 +88,41 @@ function switchScreen(){
 /**
 *   DOCU: This function is used to generate match result, and showing who's the villain
 * 	Triggered by .on("click", ".fight_button", generateMatchResult)
-*   Last updated at: August 27, 2021
+*   Last updated at: August 31, 2021
 *   @author Harold
 */
 function generateMatchResult(){
     let is_won = Math.random() < 0.5;
     let villain_name = $(this).parent().find('h3').text();
-    let modal_msg = `YOU ${ (is_won) ? "WON" : "LOST" } THE FIGHT against ${ villain_name }!`
+    let modal_message = ``;
     
-    $(".modal_wrap").fadeIn().show();
+    $(".modal_wrap").show();
+    
     /** 
-    * will show modal then generate if WON/LOST the match
+    * will show modal if have sufficient energy 
+    * then generate if WON/LOST the match, randomize villain
     */
-    setTimeout(()=> {
-        $("#match_result h2").text(modal_msg);
+    if(energy<=0){
+        modal_message = `YOU DO NOT HAVE ENOUGH ENERGY TO FIGHT`;
+        $("#match_result h2").text(modal_message);
         $("#match_result").show();
         $("#loading_result").hide();
-        $("#close_modal_button").addClass("show");
-    }, 3000 );
+    } 
+    else {
+        $("#loading_result").show();
+        $("#match_result").hide();
 
-    loadVillainCharacters();
-    $("#close_modal_button").removeClass("show");
+        setTimeout(()=> {
+            $("#loading_result").hide();
+            $("#match_result").hide();
+            modal_message = `YOU ${ (is_won) ? "WON" : "LOST" } THE FIGHT against ${ villain_name }!`;
+            energy -= 5;
+            $("#game_energy span").text(energy);
+            $("#match_result h2").text(modal_message);
+            $("#match_result").show();
+            $("#loading_result").hide();
+            loadVillainCharacters();
+        }, 3000 );
+    }
+    
 }
