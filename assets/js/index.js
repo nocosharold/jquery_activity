@@ -2,7 +2,7 @@ import character_datas from "./character.js";
 
 $(document).ready(function(){
     loadHeroCharacters();
-    loadVillainCharacters();
+    loadVillainCharacters();  
 
     $("body")
         .on("click", ".recruit_hero_button", switchScreen)
@@ -31,7 +31,7 @@ function loadHeroCharacters(){
     
     for(let character_index = 0; character_index < character_datas.length; character_index++){
         if(character_datas[character_index].character_type === "hero"){
-            hero_template += `<div class="character" data-character_id=${character_datas[character_index].id}>`;
+            hero_template += `<div class="character" data-character_id=${ character_datas[character_index].id }>`;
             hero_template += ` <img src=${ character_datas[character_index].img }>`;
             hero_template += ` <h3>${ character_datas[character_index].name }</h3>`;
             hero_template += ` <button type="button" class="recruit_hero_button">RECRUIT</button>`;
@@ -54,7 +54,7 @@ function loadVillainCharacters(){
     let random_data = get_villains[Math.floor(Math.random() * get_villains.length)];
     let selected_villains = get_villains.filter((villain) => villain.id != random_data.id);
 
-    for(let villain_index = 0; villain_index < selected_villains.length; villain_index++){
+    for(let villain_index = 0; villain_index < selected_villains.length - 1; villain_index++){
         villain_template += `<li class="character">`;
         villain_template += `   <img src=${ selected_villains[villain_index].img }>`;
         villain_template += `   <h3>${ selected_villains[villain_index].name }</h3>`;

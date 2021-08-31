@@ -47,6 +47,12 @@ export default [
         character_type: "villain",
         img: "https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Samuel_Vasquez_2EuMlCeZ8.png?updatedAt=1629869916457"
     },
+    {
+        id: 9,
+        name: "Frank King",
+        character_type: "villain",
+        img: "https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Frank_King_igWQDxMbbCZ.png?updatedAt=1630394696041"
+    },
 ];
 
 
