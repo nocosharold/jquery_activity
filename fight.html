@@ -15,7 +15,7 @@
         <!-- jquery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		
-        <script src="./assets/js/index.js"></script>
+        <script type="module" src="./assets/js/index.js"></script>
 	</head>
 	<body>
         <nav>
@@ -23,64 +23,23 @@
         </nav>
 
         <div class="container">
-            <div class="content_container" id="recruit_screen">
-                <div class="character">
-                    <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Goodwin_Walsh_nA0CkzBol.png?updatedAt=1629869913685">
-                    <h3>Goodwin Walsh</h3>
-                    <button type="button" class="recruit_hero_button">RECRUIT</button>
-                </div>
-
-                <div class="character">
-                    <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Wilfrid_Poole_Yd_lWzL2e.png?updatedAt=1629869918201">
-                    <h3>Wilfrid Poole</h3>
-                    <button type="button" class="recruit_hero_button">RECRUIT</button>
-                </div>
-
-                <div class="character">
-                    <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Matt_Swanson_r7xuJWwLi.png?updatedAt=1629869915567">
-                    <h3>Matt Swanson</h3>
-                    <button type="button" class="recruit_hero_button">RECRUIT</button>
-                </div>
-
-                <h2>RECRUIT <span>A HERO</span></h2>
-
-            </div>
+            <ul class="content_container" id="recruit_screen">
+            </ul>
 
             <div class="content_container" id="fight_screen">
-                <div class="character selected" id="selected_hero">
+                <div class="character" id="selected_hero">
+                    <img src="">
+                    <h3></h3>
                 </div>
 
                 <ul class="villains">
-                    <li class="character">
-                        <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Edie_Miles_TWZagGIek.png?updatedAt=1629869912133">
-                        <h3>Edie Miles</h3>
-                        <button type="button" class="fight_button">FIGHT!</button>
-                    </li>
-
-                    <li class="character">
-                        <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Edmond_Buckley_uaBQ_GRNe.png?updatedAt=1629869912713">
-                        <h3>Edmond Buckley</h3>
-                        <button type="button" class="fight_button">FIGHT!</button>
-                    </li>
-
-                    <li class="character">
-                        <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/Spike_Fennimore_vz9s5Q8WZ.png?updatedAt=1629869917356">
-                        <h3>Spike Fennimore</h3>
-                        <button type="button" class="fight_button">FIGHT!</button>
-                    </li>
-
-                    <li class="character">
-                        <img src="https://ik.imagekit.io/1cqtok8fv7n/Hampas_Pang_Gas/full/John_Romero_fxc7HyyVf.png?updatedAt=1629869914588">
-                        <h3>John Romero</h3>
-                        <button type="button" class="fight_button">FIGHT!</button>
-                    </li>
                 </ul>
             </div> 
 		</div>
 
         <div class="modal_wrap">
             <div id="loading_result" class="modal_content">
-                <h2>WAITING FOR FIGHTING RESULT...</h2>
+                <h2>WAITING FOR FIGHT RESULT...</h2>
             </div>
             <div id="match_result" class="modal_content">
                 <h2></h2>

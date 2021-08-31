@@ -90,6 +90,7 @@ nav span {
   display: flex;
   flex-direction: column;
   position: relative;
+  list-style-type: none;
 }
 .container .content_container#fight_screen {
   display: none;
@@ -119,7 +120,7 @@ nav span {
 .container .content_container .character button:hover {
   background-color: #f87300;
 }
-.container .content_container .character.selected {
+.container .content_container #selected_hero {
   display: inline-block;
   margin-top: 18%;
 }
