@@ -1,4 +1,5 @@
 import character_datas from "./character.js";
+let energy = 20;
 
 $(document).ready(function(){
     loadHeroCharacters();
@@ -9,8 +10,6 @@ $(document).ready(function(){
         .on("click", ".fight_button", generateMatchResult)
         .on("click", "#close_modal_button", closeModalButton);
 });
-
-let energy = 20;
 
 /**
 *   DOCU: This function is used to close modal
@@ -92,6 +91,8 @@ function switchScreen(){
 *   @author Harold
 */
 function generateMatchResult(){
+    let match_result = $("#match_result");
+    let loading_result = $("#loading_result");
     let is_won = Math.random() < 0.5;
     let villain_name = $(this).parent().find('h3').text();
     let modal_message = ``;
@@ -104,25 +105,24 @@ function generateMatchResult(){
     */
     if(energy<=0){
         modal_message = `YOU DO NOT HAVE ENOUGH ENERGY TO FIGHT`;
-        $("#match_result h2").text(modal_message);
-        $("#match_result").show();
-        $("#loading_result").hide();
+        match_result.find("h2").text(modal_message);
+        match_result.show();
+        loading_result.hide();
     } 
     else {
-        $("#loading_result").show();
-        $("#match_result").hide();
+        loading_result.show();
+        match_result.hide();
 
         setTimeout(()=> {
-            $("#loading_result").hide();
-            $("#match_result").hide();
+            loading_result.hide();
+            match_result.hide();
             modal_message = `YOU ${ (is_won) ? "WON" : "LOST" } THE FIGHT against ${ villain_name }!`;
             energy -= 5;
             $("#game_energy span").text(energy);
-            $("#match_result h2").text(modal_message);
-            $("#match_result").show();
-            $("#loading_result").hide();
+            match_result.find("h2").text(modal_message);
+            match_result.show();
+            loading_result.hide();
             loadVillainCharacters();
         }, 3000 );
     }
-    
 }
